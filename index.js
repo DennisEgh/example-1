@@ -1,24 +1,6 @@
 
 
-
-
-
-
-/* function computerPlay(){
- const numberGen = () =>{
-        return Math.floor(Math.random() * 3) + 1
- };
-
-return numberGen() === 1 ? "Rock" : (numberGen() === 2 ? "Paper" : "Scissor");
-
-};
-
-
-console.log(computerPlay());
-
-*/
-
-const playerSelection = "Rock";
+const playerSelection = "RoCk";
 
 const computerSelection = computerPlay();
 
@@ -30,40 +12,27 @@ function computerPlay(){
 
 
 function playRound(computerSelection, playerSelection){
-    
-if( computerSelection == playerSelection){
-    console.log("TIE GAME");
-} else if ( 
+    playerSelection = playerSelection.toLowerCase();
+    computerSelection = computerPlay().toLowerCase();
 
-(computerSelection == "Rock" && playerSelection == "Scissors") ||
-(computerSelection == "Scissors" && playerSelection == "Paper") ||
-(computerSelection == "Paper" && playerSelection == "Rock")
-){console.log("You Lose.");
+if (computerSelection == playerSelection){
+    console.log("TIE GAME.")
+} else if (
+(computerSelection == "rock" && playerSelection == "scissors") ||
+(computerSelection == "scissors" && playerSelection == "paper") ||
+(computerSelection == "paper" && playerSelection == "rock")
+){console.log("You Lose.")
+} else if (
+    (computerSelection == "scissors" && playerSelection == "rock") ||
+    (computerSelection == "paper" && playerSelection == "scissors") ||
+    (computerSelection == "rock" && playerSelection == "paper")
+){console.log("You Win.")};
+   
+
 };
 
+
+function playGame(){
+    playRound(computerSelection, playerSelection);
 };
-
-
-
-
-console.log(playRound(computerSelection, playerSelection));
-
-/*    if(computerSelection == playerSelection){
-        console.log("TIE GAME")
-    }else(
-        
-        (computerSelection == "Rock" && playerSelection == "Scissors") ||
-        (computerSelection == "Scissors" && playerSelection == "Paper") ||
-        (computerSelection == "Paper" && playerSelection == "Rock")
-
-
-        
-        
-        ){
-            console.log("You Lose.");
-        }
-}
-
-console.log(playRound(computerSelection, playerSelection));
-
-*/ 
+console.log(playGame());
