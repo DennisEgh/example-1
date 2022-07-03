@@ -1,11 +1,13 @@
 
 
-const playerSelection = "RoCk";
+
 
 const computerSelection = computerPlay();
 
 let computerScore = 0
 let playerScore = 0
+
+
 
 
 function computerPlay(){
@@ -45,17 +47,22 @@ console.log(` TIED. `)
 };
 
 
-function playGame(){
-for (i = 0; i < 5; i++){
- playRound(computerSelection, playerSelection)}; 
+function declareWinner(){
+    if (i = 5 && computerScore == playerScore){
+        console.log("It's a draw. Both Live To Fight Another Day.")
+        } else if ( i = 5 && computerScore > playerScore){
+            console.log("The Machines Win... This Time.")
+        } else if (i = 5 && playerScore > computerScore){
+            console.log("You win!... This Time.")
+        };
+};
 
-if (i = 5 && computerScore == playerScore){
-console.log("It's a draw. Both Live To Fight Another Day.")
-} else if ( i = 5 && computerScore > playerScore){
-    console.log("The Machines Win... This Time.")
-} else if (i = 5 && playerScore > computerScore){
-    console.log("You win!... This Time.")
-};
-};
+function playGame(){
+    for (i = 0; i < 5; i++){
+    const playerSelection = prompt("Please Choose Rock, Paper Or Scissors!");
+    playRound(computerSelection, playerSelection)}; 
+    
+     declareWinner();
+    };
 
 playGame();
