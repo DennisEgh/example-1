@@ -11,7 +11,7 @@ let playerScore = 0
 
 
 function computerPlay(){
-    const myArr = ["rock", "paper","scissors"];
+    const myArr = ["Rock", "Paper","Scissors"];
     return myArr[~~(Math.random() * myArr.length)];
 }
 
