@@ -11,7 +11,7 @@ let playerScore = 0
 
 
 function computerPlay(){
-    const myArr = ["Rock", "Paper","Scissors"];
+    const myArr = ["rock", "paper","scissors"];
     return myArr[~~(Math.random() * myArr.length)];
 }
 
@@ -28,10 +28,10 @@ console.log(` TIED. `)
     (computerSelection == "scissors" && playerSelection == "paper") ||
     (computerSelection == "paper" && playerSelection == "rock")
 )  {(computerScore = ++computerScore), playerScore < computerScore ? 
-    console.log(` ${computerScore} - ${playerScore} To Them...`) :
+    console.log(` ${computerScore} - ${playerScore} To Them. ${computerSelection} beats ${playerSelection}.`) :
      (playerScore == computerScore ? 
-     console.log(` ${computerScore} - ${playerScore} To Them... It's a TIE. `) :
-     console.log(` ${computerScore} - ${playerScore} To Them... `));
+     console.log(` ${computerScore} - ${playerScore} To Them. ${computerSelection} beats ${playerSelection}. It's a TIE. `) :
+     console.log(` ${computerScore} - ${playerScore} To Them. ${computerSelection} Beats ${playerSelection}. `));
 
 
 } else if (
@@ -39,10 +39,10 @@ console.log(` TIED. `)
     (computerSelection == "paper" && playerSelection == "scissors") ||
     (computerSelection == "rock" && playerSelection == "paper")
 )  {(playerScore = ++playerScore), playerScore > computerScore ?
-     console.log(` ${playerScore} - ${computerScore} To You.`) :
+     console.log(` ${playerScore} - ${computerScore} To You. ${playerSelection} beats ${computerSelection}`) :
     (playerScore == computerScore ? 
-    console.log(` ${playerScore} - ${computerScore} To You. It's a TIE. `) :
-    console.log(` ${playerScore} - ${computerScore} To You. `))
+    console.log(` ${playerScore} - ${computerScore} To You. ${playerSelection} beats ${computerSelection}. It's a TIE. `) :
+    console.log(` ${playerScore} - ${computerScore} To You. ${playerSelection} beats ${computerSelection}. `))
 }; 
 };
 
