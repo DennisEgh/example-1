@@ -70,11 +70,11 @@ console.log(` TIED. `)
 
 
 function declareWinner(){
-    if (i = 5 && computerScore == playerScore){
+    if (i = 5 && EqualScore){
         console.log("It's a draw. Both Live To Fight Another Day.")
-        } else if ( i = 5 && computerScore > playerScore){
+        } else if ( i = 5 && playerScoreLess){
             console.log("The Machines Win... This Time.")
-        } else if (i = 5 && playerScore > computerScore){
+        } else if (i = 5 && playerScoreMore){
             console.log("You win!... This Time.")
         };
 };
