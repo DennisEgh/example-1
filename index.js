@@ -7,6 +7,28 @@ const computerSelection = computerPlay();
 let computerScore = 0
 let playerScore = 0
 
+/* Computer Selection */
+let isComputerSelectionRock = computerSelection == "rock";
+let isComputerSelectionPaper = computerSelection == "paper";
+let isComputerSelectionScissors = computerSelection == "scissors";
+/* Player Selection */
+let isPlayerSelectionRock = playerSelection == "rock";
+let isPlayerSelectionPaper = playerSelection == "paper";
+let isPlayerSelectionScissors = playerSelection == "scissors";
+
+/* TERNARY OPERATOR TRANSLATION */
+playerScoreLess = (playerScore < computerScore);
+playerScoreMore = (PlayerScoreLess > computerScore);
+
+computerWinsRound = (` ${computerScore} - ${playerScore} To Them. ${computerSelection} beats ${playerSelection}.`);
+computerWinsRoundTie = (` ${computerScore} - ${playerScore} To Them. ${computerSelection} beats ${playerSelection}. It's a TIE.`);
+
+EqualSelection = (computerSelection == playerSelection);
+EqualScore = (playerScore == computerScore);
+
+playerWinsRound = (` ${playerScore} - ${computerScore} To You. ${playerSelection} beats ${computerSelection}`);
+playerWinsRoundTie = (` ${playerScore} - ${computerScore} To You. ${playerSelection} beats ${computerSelection}. It's a TIE.`)
+
 
 
 
@@ -20,29 +42,29 @@ function playRound(computerSelection, playerSelection){
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerPlay().toLowerCase();
 
-if (computerSelection == playerSelection){
+if (EqualScore){
 console.log(` TIED. `)
 
 } else if (
-    (computerSelection == "rock" && playerSelection == "scissors") ||
-    (computerSelection == "scissors" && playerSelection == "paper") ||
-    (computerSelection == "paper" && playerSelection == "rock")
-)  {(computerScore = ++computerScore), playerScore < computerScore ? 
-    console.log(` ${computerScore} - ${playerScore} To Them. ${computerSelection} beats ${playerSelection}.`) :
-     (playerScore == computerScore ? 
-     console.log(` ${computerScore} - ${playerScore} To Them. ${computerSelection} beats ${playerSelection}. It's a TIE. `) :
-     console.log(` ${computerScore} - ${playerScore} To Them. ${computerSelection} Beats ${playerSelection}. `));
+    (isComputerSelectionRock && isPlayerSelectionScissors) ||
+    (isComputerSelectionRock && isPlayerSelectionPaper) ||
+    (isComputerSelectionPaper && isPlayerSelectionRock)
+)  {(computerScore = ++computerScore), playerScoreLess ? 
+    console.log(computerWinsRound) : 
+    (EqualScore ? 
+    console.log(computerWinsRoundTie) :
+    console.log(computerWinsRound));
 
 
 } else if (
-    (computerSelection == "scissors" && playerSelection == "rock") ||
-    (computerSelection == "paper" && playerSelection == "scissors") ||
-    (computerSelection == "rock" && playerSelection == "paper")
-)  {(playerScore = ++playerScore), playerScore > computerScore ?
-     console.log(` ${playerScore} - ${computerScore} To You. ${playerSelection} beats ${computerSelection}`) :
-    (playerScore == computerScore ? 
-    console.log(` ${playerScore} - ${computerScore} To You. ${playerSelection} beats ${computerSelection}. It's a TIE. `) :
-    console.log(` ${playerScore} - ${computerScore} To You. ${playerSelection} beats ${computerSelection}. `))
+    (isComputerSelectionScissors && isPlayerSelectionRock) ||
+    (isComputerSelectionPaper && isPlayerSelectionScissors) ||
+    (isComputerSelectionRock && isPlayerSelectionPaper)
+)  {(playerScore = ++playerScore), playerScoreMore ? 
+    console.log(playerWinsRound) :
+    (EqualScore ? 
+    console.log(playerWinsRoundTie) :
+    console.log(playerWinsRound))
 }; 
 };
 
