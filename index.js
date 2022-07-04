@@ -4,30 +4,32 @@
 
 const computerSelection = computerPlay();
 
+
 let computerScore = 0
 let playerScore = 0
 
 /* Computer Selection */
-let isComputerSelectionRock = computerSelection == "rock";
-let isComputerSelectionPaper = computerSelection == "paper";
-let isComputerSelectionScissors = computerSelection == "scissors";
+const isComputerSelectionRock = computerSelection == "rock";
+const isComputerSelectionPaper = computerSelection == "paper";
+const isComputerSelectionScissors = computerSelection == "scissors";
 /* Player Selection */
-let isPlayerSelectionRock = playerSelection == "rock";
-let isPlayerSelectionPaper = playerSelection == "paper";
-let isPlayerSelectionScissors = playerSelection == "scissors";
+const isPlayerSelectionRock = playerSelection == "rock";
+const isPlayerSelectionPaper = playerSelection == "paper";
+const isPlayerSelectionScissors = playerSelection == "scissors";
 
 /* TERNARY OPERATOR TRANSLATION */
-playerScoreLess = (playerScore < computerScore);
-playerScoreMore = (PlayerScoreLess > computerScore);
+const playerScoreLess = playerScore < computerScore;
+const playerScoreMore = playerScore > computerScore;
 
-computerWinsRound = (` ${computerScore} - ${playerScore} To Them. ${computerSelection} beats ${playerSelection}.`);
-computerWinsRoundTie = (` ${computerScore} - ${playerScore} To Them. ${computerSelection} beats ${playerSelection}. It's a TIE.`);
+const computerWinsRound = ` ${computerScore} - ${playerScore} To Them. ${computerSelection} beats ${playerSelection}.`;
+const computerWinsRoundTie = ` ${computerScore} - ${playerScore} To Them. ${computerSelection} beats ${playerSelection}. It's a TIE.`;
 
-EqualSelection = (computerSelection == playerSelection);
-EqualScore = (playerScore == computerScore);
+const EqualSelection = computerSelection == playerSelection;
+const EqualScore = playerScore == computerScore;
 
-playerWinsRound = (` ${playerScore} - ${computerScore} To You. ${playerSelection} beats ${computerSelection}`);
-playerWinsRoundTie = (` ${playerScore} - ${computerScore} To You. ${playerSelection} beats ${computerSelection}. It's a TIE.`)
+const playerWinsRound = ` ${playerScore} - ${computerScore} To You. ${playerSelection} beats ${computerSelection}`;
+const playerWinsRoundTie = ` ${playerScore} - ${computerScore} To You. ${playerSelection} beats ${computerSelection}. It's a TIE.`;
+
 
 
 
@@ -50,10 +52,10 @@ console.log(` TIED. `)
     (isComputerSelectionRock && isPlayerSelectionPaper) ||
     (isComputerSelectionPaper && isPlayerSelectionRock)
 )  {(computerScore = ++computerScore), playerScoreLess ? 
-    console.log(computerWinsRound) : 
+    console.log('computerWinsRound') : 
     (EqualScore ? 
-    console.log(computerWinsRoundTie) :
-    console.log(computerWinsRound));
+    console.log('computerWinsRoundTie') :
+    console.log('computerWinsRound'));
 
 
 } else if (
@@ -81,10 +83,12 @@ function declareWinner(){
 
 function playGame(){
     for (i = 0; i < 5; i++){
-    const playerSelection = prompt("Please Choose Rock, Paper Or Scissors!");
+        prompt("Please Choose Rock, Paper Or Scissors!");
     playRound(computerSelection, playerSelection)}; 
     
      declareWinner();
     };
 
 playGame();
+
+
